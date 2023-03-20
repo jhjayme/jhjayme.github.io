@@ -6,9 +6,10 @@
    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
    <!-- we import arjs version without NFT but with marker + location based support -->
-   <!--  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script> -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
    <body style="margin : 0px; overflow: hidden;">
-      <a-scene>
+      <a-scene embedded arjs>
+          <a-marker preset="hiro" >
              <a-box id="box1" geometry="primitive: plane" color="#27235e"  position="-5 2 -5"
                 rotation="0 0 0"
                 scale="4 7 2"
@@ -65,7 +66,8 @@
                 text="value: CPM, as an entity \n extending support to the \n various departments of \n the university, abidges with \n the goals of USPF. \n Specifically, it aims to: \n\n 1. build the USPF reputation \n as a top university for quality \n education and variety of course \n offerings, and \n\n 2. promote USPF as a choice \n educational institution \n in Central Visayas.; color: white; width:2; whiteSpace: pre; align: center"
                 position="3 1.3 -3"
                 scale="1.5 1.5 1.5"></a-entity>
-
+              </a-marker>
+           <a-entity camera ></a-entity>
         </a-scene>
      </body>
   </html>
