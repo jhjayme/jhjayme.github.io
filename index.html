@@ -1,71 +1,26 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   </head>
-   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-   <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
-   <!-- we import arjs version without NFT but with marker + location based support -->
-   <!--  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script> -->
-   <body style="margin : 0px; overflow: hidden;">
-      <a-scene>
-             <a-box id="box1" geometry="primitive: plane" color="#27235e"  position="-5 2 -5"
-                rotation="0 0 0"
-                scale="4 7 2"
-                ></a-box>
-             <a-box id="box2" geometry="primitive: plane" color="#27235e"  position="0 2 -5"
-                rotation="0 0 0"
-                scale="4 7 2"
-                ></a-box>
-             <a-box id="box3" geometry="primitive: plane" color="#27235e"  position="5 2 -5"
-                rotation="0 0 0"
-                scale="4 7 2"
-                ></a-box>
-             <!-- <a-box
-                src="#boxTexture"
-                position="0 2 -5"
-                rotation="0 0 0"
-                scale="2 2 2"
-                animation__position="property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true"
-                animation__mouseenter="property: scale; to: 2.3 2.3 2.3; dur: 300; startEvents: mouseenter"
-                animation__mouseleave="property: scale; to: 2 2 2; dur: 300; startEvents: mouseleave"></a-box> -->
-             <!--   <a-box id="vision-icon" geometry="primitive: circle; radius: 0.5;"  material="side:front" position="-3.2 4 -4" color="white">
-                </a-box> -->
-             <a-entity id="long-text"
-                text="value: A quality team of communications, publications, and marketing professionals supporting the university and its departments achieve its vision, mission, and goals; color: black; align: center; width: 3;"
-                position="0 3.7 -2"
-                scale="1.5 1.5 1.5"
-                ></a-entity>
-              <a-entity id="quote-text"
-                text="value: Redefining Support Services; color: black; align: center; width: 2;"
-                position="0 0.2 -2"
-                scale="1.5 1.5 1.5"
-                ></a-entity>
-             <a-entity id="vision"
-                text="value: OUR \n VISION; color: white; align: center; width: 5"
-                position="-3 3 -3"
-                scale="1.5 1.5 1.5"></a-entity>
-             <a-entity id="vision-text"
-                text="value: Keeping USPF \n top-of-mind \n in the \n community.; color: white; width:2.5; whiteSpace: pre; align: center"
-                position="-3 2 -3"
-                scale="1.5 1.5 1.5"></a-entity>
-             <a-entity id="mission"
-                text="value: OUR \n MISSION; color: white; align: center; width: 5"
-                position="0 3 -3"
-                scale="1.5 1.5 1.5"></a-entity>
-             <a-entity id="mission-text"
-                text="value: We commit to \n promptly provide \n quality service \n and support to \n the university to \n help USPF \n achieve its \n vision, mission \n and goals.; color: white; width:2.5; whiteSpace: pre; align: center"
-                position="0 1.6 -3"
-                scale="1.5 1.5 1.5"></a-entity>
-             <a-entity id="goal"
-                text="value: OUR \n GOAL; color: white; align: center; width: 5"
-                position="3 3 -3"
-                scale="1.5 1.5 1.5"></a-entity>
-             <a-entity id="goal-text"
-                text="value: CPM, as an entity \n extending support to the \n various departments of \n the university, abidges with \n the goals of USPF. \n Specifically, it aims to: \n\n 1. build the USPF reputation \n as a top university for quality \n education and variety of course \n offerings, and \n\n 2. promote USPF as a choice \n educational institution \n in Central Visayas.; color: white; width:2; whiteSpace: pre; align: center"
-                position="3 1.3 -3"
-                scale="1.5 1.5 1.5"></a-entity>
-
-        </a-scene>
-     </body>
-  </html>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <!-- we import arjs version without NFT but with marker + location based support -->
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+  <body style="margin : 0px; overflow: hidden;">
+    <a-scene embedded arjs>
+      <a-marker preset="hiro">
+        <!-- we use cors proxy to avoid cross-origin problems -->
+        <!--
+          ⚠️⚠️⚠️
+          https://arjs-cors-proxy.herokuapp.com/ is now offline, Heroku has dismissed all his free plans from November 2022.
+          You need to host your own proxy and use it instead. The proxy is based on CORS Anywhere (see https://github.com/Rob--W/cors-anywhere).
+          ⚠️⚠️⚠️
+        -->
+        <a-entity
+          position="0 0 0"
+          scale="0.05 0.05 0.05"
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
+        ></a-entity>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>

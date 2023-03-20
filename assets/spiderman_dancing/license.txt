@@ -1,0 +1,11 @@
+Model Information:
+* title:	The Amazing SpiderMan Dancing
+* source:	https://sketchfab.com/3d-models/the-amazing-spiderman-dancing-7be7f50b3d6d4d59945060916aad4f4d
+* author:	Charreton (https://sketchfab.com/charreton)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "The Amazing SpiderMan Dancing" (https://sketchfab.com/3d-models/the-amazing-spiderman-dancing-7be7f50b3d6d4d59945060916aad4f4d) by Charreton (https://sketchfab.com/charreton) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
