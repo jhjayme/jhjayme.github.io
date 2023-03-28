@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html>
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
   <!-- we import arjs version without NFT but with marker + location based support -->
-  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
   <body style="margin : 0px; overflow: hidden;">
-    <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;" >
-      <a-marker preset="hiro">
-        <!-- we use cors proxy to avoid cross-origin problems -->
-        <!--
-          ⚠️⚠️⚠️
-          https://arjs-cors-proxy.herokuapp.com/ is now offline, Heroku has dismissed all his free plans from November 2022.
-          You need to host your own proxy and use it instead. The proxy is based on CORS Anywhere (see https://github.com/Rob--W/cors-anywhere).
-          ⚠️⚠️⚠️
-        -->
-        <a-entity
-          position="0 0 0"
-          scale="1 1 1"
-          gltf-model="https://cdn.jsdelivr.net/gh/jhjayme/jhjayme.github.io@master/assets/spiderman_dancing/scene.gltf"
-        ></a-entity>
-      </a-marker>
-      <a-entity camera look-controls position="0 1.6 0"></a-entity>
-    </a-scene>
+    <a-scene vr-mode-ui="enabled: false">
+      <a-box color="green"
+           event-set__click="material.color: red; scale: 2 2 2"
+           event-set__mouseenter="material.color: blue"></a-box>
+        <!-- box -->
+         <a-box position="1 0.75 -3" radius="0.5" height="1.5" depth="0.5" color="#FFC65D" 
+          event-set__enter="_event: mouseenter; _target: #boxtext; visible: true" event-set__leave="_event: mouseleave; _target: #boxtext; visible: false">
+           <a-text id="boxtext" value="This is a cylinder" align="center" color="#FFF" visible="false" position="0 -0.55 0.55"
+                geometry="primitive: plane; width: 1.75" material="color: #333"></a-text>
+         </a-box>
+
+         <a-sphere event-set__down="_event:mousedown; color: blue"
+         event-set__up="_event:mouseup; color:red"
+         event-set__leave="_event:mouseleave; color:blue"
+         ></a-sphere>
+
+          <a-camera>
+            <a-cursor></a-cursor>
+          </a-camera>
+
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene> 
   </body>
 </html>
